@@ -1,0 +1,25 @@
+{
+  "name": "top-battleship",
+  "version": "1.0.0",
+  "description": "practising test driven development",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watchAll"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lumsdnb/top-battleship.git"
+  },
+  "author": "lums",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lumsdnb/top-battleship/issues"
+  },
+  "homepage": "https://github.com/lumsdnb/top-battleship#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/preset-env": "^7.15.6",
+    "eslint": "^7.32.0",
+    "jest": "^27.2.0"
+  }
+}
