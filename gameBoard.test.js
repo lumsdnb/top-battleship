@@ -11,13 +11,28 @@ import ship from './ship';
 //  3x2 long
 //  2x3 long
 //  1x4 long
-
-const testShip = ship(2);
+const testShip = ship(1);
+const testBoard = gameBoard();
+const oneSquares = [];
+const _missedAttacks = [];
 
 test('place a ship', () => {
-  expect(gameBoard().placeShip(testShip, 1, 2)).toBe(true);
+  expect(testBoard.placeShip(testShip, 9, 2)).toBe(true);
 });
 
-test('place ship out of bounds', () => {
-  expect(gameBoard().placeShip(testShip, 10, 2)).toBe(false);
+test('place ship out of bounds x', () => {
+  expect(testBoard.placeShip(testShip, 10, 2)).toBe(false);
+});
+
+test('place ship out of bounds y', () => {
+  expect(testBoard.placeShip(testShip, 4, 11)).toBe(false);
+});
+
+test('were all ships sunk?', () => {
+  expect(testBoard.wereAllShipsSunk()).toBe(false);
+});
+
+test('successful attack', () => {
+  testBoard.placeShip(testShip, 2, 2);
+  expect(testBoard.receiveAttack(2, 2)).toBe(true);
 });
